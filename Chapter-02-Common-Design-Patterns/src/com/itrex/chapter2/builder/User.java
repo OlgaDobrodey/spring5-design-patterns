@@ -15,7 +15,7 @@ public class User {
         address = builder.address;
     }
 
-    public static Builder builder(){
+    public static Builder builder() {
         return new Builder();
     }
 

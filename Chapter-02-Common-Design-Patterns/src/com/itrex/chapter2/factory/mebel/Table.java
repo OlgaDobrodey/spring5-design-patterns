@@ -1,6 +1,6 @@
 package com.itrex.chapter2.factory.mebel;
 
-public class Table implements Furniture{
+public class Table implements Furniture {
 
     @Override
     public Furniture getFurniture() {

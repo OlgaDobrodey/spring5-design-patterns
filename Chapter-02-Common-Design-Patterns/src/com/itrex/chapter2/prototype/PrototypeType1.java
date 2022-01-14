@@ -1,6 +1,6 @@
 package com.itrex.chapter2.prototype;
 
-public class PrototypeType1 extends Prototype{
+public class PrototypeType1 extends Prototype {
 
     @Override
     public Prototype clone() {

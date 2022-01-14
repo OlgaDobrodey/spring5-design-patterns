@@ -5,7 +5,7 @@ import com.itrex.chapter2.abstractFactory.HeathyFood.Salad;
 import com.itrex.chapter2.abstractFactory.TastyFood.Pizza;
 import com.itrex.chapter2.abstractFactory.TastyFood.TastyFood;
 
-public class Food implements AbstractFood{
+public class Food implements AbstractFood {
 
     @Override
     public HealthyFood getHealthyFood() {

@@ -1,6 +1,7 @@
 package com.itrex.chapter2.factory.book;
 
 public class FactoryPatterMain {
+
     public static void main(String[] args) {
         AccountFactory accountFactory = new AccountFactory();
         // getting an object of the SavingAccount class and call method getAccount
@@ -10,6 +11,7 @@ public class FactoryPatterMain {
         Account currentAccount = accountFactory.getAccount("CURRENT");
         currentAccount.accountType();
     }
+
 }
     /*
     return
