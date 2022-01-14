@@ -2,11 +2,14 @@ package com.itrex.chapter3.decorate;
 
 public class Shampoo implements Product{
 
-    private Integer price = 50;
+    private Integer price;
+
+    public Shampoo() {
+        this.price = 50;
+    }
 
     @Override
     public Integer getPrice() {
-        System.out.println("price= "+ price);
         return price;
     }
 
