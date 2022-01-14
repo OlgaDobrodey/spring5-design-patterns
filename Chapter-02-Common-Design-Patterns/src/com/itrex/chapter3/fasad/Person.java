@@ -9,5 +9,6 @@ public class Person {
 
     private Roles role;
     private Boolean freeTime;
+    private Integer age;
 
 }
