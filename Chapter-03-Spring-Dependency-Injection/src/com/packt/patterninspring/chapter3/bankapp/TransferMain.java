@@ -17,8 +17,8 @@ public class TransferMain {
 		//Use transfer method
 		transferService.transferAmmount(100l, 200l, new Amount(2000.0));
 
-		TransferService service = (TransferService) applicationContext.getBean("service");
-		service.transferAmmount(100l, 200l, new Amount(2000.0));
+		//TransferService service = (TransferService) applicationContext.getBean("service");
+	//	service.transferAmmount(100l, 200l, new Amount(2000.0));
 
 		applicationContext.close();
 

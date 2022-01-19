@@ -5,16 +5,14 @@ import com.packt.patterninspring.chapter3.bankapp.model.Amount;
 import com.packt.patterninspring.chapter3.bankapp.repository.AccountRepository;
 import com.packt.patterninspring.chapter3.bankapp.repository.TransferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TransferServiceImpl implements TransferService {
-	@Autowired
+
 	AccountRepository accountRepository;
-	@Autowired
 	TransferRepository transferRepository;
-	
-	public TransferServiceImpl() {
-		super();
-	}
+
 	@Autowired
 	public TransferServiceImpl(AccountRepository accountRepository, TransferRepository transferRepository) {
 		super();
@@ -28,13 +26,15 @@ public class TransferServiceImpl implements TransferService {
 		Account accountB = accountRepository.findByAccountId(b);
 		transferRepository.transfer(accountA, accountB, amount);
 	}
-	@Autowired(required = false)
-	public void setAccountRepository(AccountRepository accountRepository) {
-		this.accountRepository = accountRepository;
-	}
-	@Autowired
-	public void setTransferRepository(TransferRepository transferRepository) {
-		this.transferRepository = transferRepository;
-	}
+//// if spring don't find accountRepository - bean not setter in object
+// //-it is bad practices
+//	@Autowired(required = false)
+//	public void setAccountRepository(AccountRepository accountRepository) {
+//		this.accountRepository = accountRepository;
+//	}
+//	@Autowired
+//	public void setTransferRepository(TransferRepository transferRepository) {
+//		this.transferRepository = transferRepository;
+//	}
 	
 }

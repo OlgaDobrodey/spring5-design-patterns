@@ -31,9 +31,9 @@ public class AppConfig {
 		return new JdbcTransferRepository();
 	}
 
-	@Bean(name = "service")
-	public TransferService transferService( AccountRepository accountRepository,TransferRepository transferRepository) {
-		return new TransferServiceImpl(accountRepository, transferRepository);
-	}
+//	@Bean(name = "service")
+//	public TransferService transferService( AccountRepository accountRepository,TransferRepository transferRepository) {
+//		return new TransferServiceImpl(accountRepository, transferRepository);
+//	}
 
 }
