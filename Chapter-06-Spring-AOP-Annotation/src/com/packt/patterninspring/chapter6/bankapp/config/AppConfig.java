@@ -13,10 +13,10 @@ import com.packt.patterninspring.chapter6.bankapp.aspect.Auditing;
  */
 @Configuration
 @EnableAspectJAutoProxy
-@ComponentScan(basePackages={"com.packt.patterninspring.chapter6.bankapp.service"})
+@ComponentScan(basePackages={"com.packt.patterninspring.chapter6.bankapp"})
 public class AppConfig {
-	@Bean
-	public Auditing auditing() {
-		return new Auditing();
-	}
+//	@Bean
+//	public Auditing auditing() {
+//		return new Auditing();
+//	}
 }

@@ -15,10 +15,14 @@ public class AspectDemo {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+
 		TransferService transferService = applicationContext.getBean(TransferService.class);
 		transferService.transfer("accountA", "accountB", 50000l);
+
+		transferService.createCache("Let's go");
+
 		applicationContext.close();
 	}
 
