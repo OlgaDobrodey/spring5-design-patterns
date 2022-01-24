@@ -19,8 +19,8 @@ public class SpringCacheDemo {
 		AccountService transferService = applicationContext.getBean(AccountService.class);
 		Account account = transferService.findOne(1l);
 		System.out.println(account);
-		account = transferService.findOne(1l);
-		System.out.println(account);
+		Account account2 = transferService.findOne(1l);
+		System.out.println(account2);
 		applicationContext.close();
 	}
 	
