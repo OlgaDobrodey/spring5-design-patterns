@@ -9,6 +9,19 @@ public class Account {
 	Long id;
 	Long balance;
 	String name;
+
+	public Account() {}
+
+	public Account(Long id) {
+		this.id = id;
+	}
+
+	public Account(Long id, Long balance, String name) {
+		this.id = id;
+		this.balance = balance;
+		this.name = name;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -31,12 +44,5 @@ public class Account {
 	public String toString() {
 		return "Account [id=" + id + ", balance=" + balance + ", name=" + name + "]";
 	}
-	public Account(Long id) {
-		super();
-		this.id = id;
-	}
-	public Account() {
-		super();
-	}
-	
+
 }

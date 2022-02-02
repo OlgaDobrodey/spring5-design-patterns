@@ -3,10 +3,13 @@ package main.com.packt.patterninspring.chapter9.bankapp.config;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
+import org.springframework.cache.ehcache.EhCacheCacheManager;
+import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * @author Dinesh.Rajput
@@ -17,10 +20,11 @@ import org.springframework.context.annotation.Import;
 @ComponentScan(basePackages={"main.com.packt.patterninspring.chapter9.bankapp"})
 @Import(InfrastructureConfig.class)
 public class AppConfig {
-	
+
 	@Bean
 	public CacheManager cacheManager() {
 		CacheManager cacheManager = new ConcurrentMapCacheManager();
 		return cacheManager;
 	}
+
 }

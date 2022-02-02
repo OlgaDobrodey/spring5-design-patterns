@@ -11,7 +11,10 @@ public class JpaAccountRepository implements AccountRepository {
 
 	@Override
 	public Account findAccountById(Long id) {
-		return new Account(id);
+		Account account = new Account(id);
+		account.setBalance(5000l);
+		account.setName("Olga");
+		return account;
 	}
 
 	@Override
@@ -20,7 +23,7 @@ public class JpaAccountRepository implements AccountRepository {
 	}
 
 	@Override
-	public Long save(Account account) {
+	public Account save(Account account) {
 		return null;
 	}
 

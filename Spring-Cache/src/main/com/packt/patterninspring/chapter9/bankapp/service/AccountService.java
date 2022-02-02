@@ -13,7 +13,7 @@ public interface AccountService {
 	
 	Account findOne(Long id);
 	
-	Long save(Account account);
+	Account save(Account account);
 	
 	void remove(Long id);
 }
