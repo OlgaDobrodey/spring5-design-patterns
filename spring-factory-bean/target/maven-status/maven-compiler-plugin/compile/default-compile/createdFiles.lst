@@ -1,0 +1,6 @@
+main\com\itrex\bankapp\FactoryBeanDemo.class
+main\com\itrex\bankapp\repository\IAccountRepository.class
+main\com\itrex\bankapp\config\AppConfig.class
+main\com\itrex\bankapp\repository\AccountRepository.class
+main\com\itrex\bankapp\repository\AccountRepositoryFactoryBean.class
+main\com\itrex\bankapp\service\TransferService.class
