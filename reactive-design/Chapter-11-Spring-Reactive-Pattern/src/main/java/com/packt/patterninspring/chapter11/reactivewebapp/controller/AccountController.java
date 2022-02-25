@@ -19,10 +19,6 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
-/**
- * @author Dinesh.Rajput
- *
- */
 @RestController
 public class AccountController {
 	

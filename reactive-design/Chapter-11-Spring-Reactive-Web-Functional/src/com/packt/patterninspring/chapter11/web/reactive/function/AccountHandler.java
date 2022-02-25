@@ -12,10 +12,6 @@ import com.packt.patterninspring.chapter11.web.reactive.repository.AccountReposi
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/**
- * @author Dinesh.Rajput
- *
- */
 public class AccountHandler {
 
 	private final AccountRepository repository;

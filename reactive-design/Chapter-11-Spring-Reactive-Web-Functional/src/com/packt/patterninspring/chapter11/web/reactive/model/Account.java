@@ -2,10 +2,6 @@ package com.packt.patterninspring.chapter11.web.reactive.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * @author Dinesh.Rajput
- *
- */
 public class Account {
 
 	Long id;

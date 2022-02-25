@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.packt.patterninspring.chapter11.reactivewebapp.model;
 
 import java.io.Serializable;
@@ -9,10 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- * @author Dinesh.Rajput
- *
- */
 @Table
 @Entity
 public class Account implements Serializable{
