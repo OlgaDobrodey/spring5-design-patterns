@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface BookRepository {
 
-    int count();
+    long count();
     int save(Book book);
     int update(Book book);
     int deleteById(Long id);

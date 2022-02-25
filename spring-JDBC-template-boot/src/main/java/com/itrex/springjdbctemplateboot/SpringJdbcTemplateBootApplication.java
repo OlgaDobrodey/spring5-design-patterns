@@ -6,18 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class SpringJdbcTemplateBootApplication implements CommandLineRunner {
 
     @Autowired
     private BookRepository bookRepository;
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
 
     public static void main(String[] args) {
 
@@ -25,21 +24,32 @@ public class SpringJdbcTemplateBootApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
-        System.out.println("Creating tables for testing");
-        jdbcTemplate.execute("DROP TABLE books IF EXISTS");
-        jdbcTemplate.execute("CREATE TABLE books(" +
-                "id SERIAL, name VARCHAR(255), price NUMERIC(15, 2))");
+    public void run(String... args) {
+
+        System.out.println("Count books in  BD:" + bookRepository.count());
+        System.out.println("Find all books:" + bookRepository.findAll());
+        System.out.println("Find by name and price: " + bookRepository.findByNameAndPrice("User", 2000l));
+        System.out.println("Find by id: " + bookRepository.findById(1l));
+        System.out.println("Get name: " + bookRepository.getNameById(1l));
+        System.out.println("Save book: " + bookRepository.save(new Book("Elena", 20000l)));
+        System.out.println("Find all books:" + bookRepository.findAll() + "\n");
 
         List<Book> books = Arrays.asList(
-                new Book("Thinking in Java", 46l),
-                new Book("Mkyong in Java", 199l),
-                new Book("Getting Clojure", 199l),
-                new Book("Head First Android Development", 199l)
+                new Book("Thinking in Java", 30000l),
+                new Book("Mkyong in Java", 25000l),
+                new Book("Getting Clojure", 26000l),
+                new Book("Head First Android Development", 20002l)
         );
 
-        System.out.println("Saving all books in DB");
-        books.stream().map(book -> bookRepository.save(book));
+        books.stream().map(book -> bookRepository.save(book)).collect(Collectors.toList());
+        System.out.println("Find all books:" + bookRepository.findAll() + "\n");
 
+        Optional<Book> book = bookRepository.findById(6l);
+        if (book.isPresent()) {
+            Book bookUpdate = book.get();
+            bookUpdate.setPrice(100000l);
+            bookRepository.update(bookUpdate);
+            System.out.println(bookRepository.findById(6l) + "\n");
+        }
     }
 }

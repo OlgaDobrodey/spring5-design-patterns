@@ -15,8 +15,8 @@ public class JdbcBookRepository implements BookRepository{
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public int count() {
-        return jdbcTemplate.queryForObject("select count(*) from books", Integer.class);
+    public long count() {
+        return jdbcTemplate.queryForObject("select count(*) from books", Long.class);
     }
 
     @Override
@@ -73,7 +73,7 @@ public class JdbcBookRepository implements BookRepository{
     public List<Book> findByNameAndPrice(String name, Long price) {
         return jdbcTemplate.query(
                 "select * from books where name like ? and price <= ?",
-                new Object[]{"%" + name + "%", price},
+                new Object[]{"%" + name.toUpperCase() + "%", price},
                 (rs, rowNum) ->
                         new Book(
                                 rs.getLong("id"),
